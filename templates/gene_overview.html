@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+Gene Overview
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Gene Overview</h1>
+
+    {% if gene_data %}
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-head-light-purple">
+                <tr>
+                    {% for column in column_names %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for gene in gene_data %}
+                <tr>
+                    {% for value in gene.values() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center">
+        No data available in the gene table.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

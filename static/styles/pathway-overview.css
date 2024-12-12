@@ -1,0 +1,18 @@
+/* Image Container Styles */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ccc;
+    cursor: grab;
+}
+
+/* Image Styles for Zooming and Panning */
+#pathway-image {
+    transform: translate(0px, 0px) scale(1);
+    transform-origin: 0 0;
+    user-select: none;
+    width: 100%;
+    height: auto;
+}

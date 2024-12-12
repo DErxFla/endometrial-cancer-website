@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+Transcript Overview
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Flexbox for Title and Chart -->
+    <div class="d-flex justify-content-between align-items-center mb-4" style="flex-wrap: wrap; width: 100%;">
+        <!-- Title on the Left -->
+        <h1 class="flex-grow-1" style="margin: 0; white-space: nowrap; max-width: 70%;">Transcript Overview</h1>
+        <!-- Pie Chart on the Right -->
+        <div id="biotype-pie-chart-container">
+            <canvas id="biotype-pie-chart"></canvas>
+        </div>
+    </div>
+
+    {% if transcript_data %}
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-head-light-purple">
+                <tr>
+                    {% for column in column_names %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for transcript in transcript_data %}
+                <tr>
+                    {% for value in transcript.values() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center">
+        No data available in the transcript table.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script id="biotype-data" type="application/json">{{ biotype_distribution | tojson | safe }}</script>
+<script src="{{ url_for('static', filename='scripts/transcript_chart.js') }}"></script>
+{% endblock %}

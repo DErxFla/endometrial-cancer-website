@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Endometrial Cancer Database{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- About Endometrial Cancer Section -->
+    <div class="section">
+        <h2>About Endometrial Cancer</h2>
+        <p class="bodytext">
+            Endometrial cancer (EC) is the most common gynaecological malignancy and the fourth most common malignancy in women in the developed world after breast, colorectal and lung cancer. Two types of endometrial carcinoma are distinguished with respect to biology and clinical course (
+            <a href="https://en.wikipedia.org/wiki/Endometrial_cancer" target="_blank" rel="noopener noreferrer">
+                Endometrial cancer
+            </a> ).
+        </p>
+        <p class="bodytext">
+            Type-I carcinoma is related to hyperestrogenism by association with endometrial hyperplasia, 
+            frequent expression of estrogen and progesterone receptors and younger age, whereas type-II 
+            carcinoma is unrelated to estrogen, associated with atrophic endometrium, frequent lack of estrogen 
+            and progesterone receptors and older age. The morphologic differences in these cancers are mirrored in 
+            their molecular genetic profile with type I showing defects in DNA-mismatch repair and mutations in 
+            PTEN, K-ras, and beta-catenin, and type II showing aneuploidy, p53 mutations, and her2/neu amplification (
+            <a href="https://www.kegg.jp/entry/H00026" target="_blank" rel="noopener noreferrer">
+                EC KEGG
+            </a> ).
+        </p>
+    </div>
+
+    <!-- EC Database Section -->
+    <div class="section">
+        <div class="flex-container">
+            <!-- Left Box -->
+            <div class="box">
+                <h2>EC Database</h2>
+                <p class="bodytext">
+                    EC is committed to establishing a resource with relevant genetic information and affected pathways in endometrial cancer.
+                </p>
+                <ul>
+                    <li>Genes</li>
+                    <li>Transcripts</li>
+                    <li>KEGG Pathways</li>
+                </ul>
+            </div>
+            <!-- Right Box -->
+            <div class="box">
+                <h2>KEGG Pathway</h2>
+                <div class="text-center">
+                    <img src="{{ url_for('static', filename='images/hsa05213.png') }}" alt="KEGG Pathway for Endometrial Cancer" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+/* Scrollable Table */
+.table-responsive {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body.dark-mode .table-responsive {
+    border: 1px solid #444444;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+body.dark-mode .table {
+    background-color: #1e1e1e;
+    color: #fff !important;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+body.dark-mode .table-bordered {
+    border: 1px solid #444444;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+    background-color: #333333;
+    color: #fff !important;
+}
+
+.table-primary {
+    background-color: #FFC0CB;
+    color: #fff;
+}
+
+body.dark-mode .table-primary {
+    background-color: #444444;
+    color: #fff !important;
+}
+
+.table-head-light-purple {
+    background-color: #E6E6FA;
+    color: #4B0082;
+}
+
+body.dark-mode .table-head-light-purple {
+    background-color: #333333;
+    color: #fff !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+body.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #1e1e1e;
+    color: #fff !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #fff;
+}
+
+body.dark-mode .table-striped tbody tr:nth-of-type(even) {
+    background-color: #333333;
+    color: #fff !important;
+}
+
+/* Ensure all table text in dark mode is white */
+body.dark-mode .table th,
+body.dark-mode .table td {
+    color: #fff !important;
+}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+Pathway Overview
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Pathway Overview</h1>
+
+    {% if pathway_data %}
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-head-light-purple">
+                <tr>
+                    {% for column in column_names %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for pathway in pathway_data %}
+                <tr>
+                    {% for column, value in pathway.items() %}
+                        <td>
+                            {% if column == "KEGG Element" %}
+                                <!-- KEGG Element Link -->
+                                <a href="https://www.kegg.jp/entry/{{ value }}" target="_blank" rel="noopener noreferrer">
+                                    {{ value }}
+                                </a>
+                                <br>
+                                <!-- Pathway Overview Link -->
+                                <a href="{{ url_for('pathway_overview', element=value) }}" target="_blank" rel="noopener noreferrer">
+                                    Pathway Overview
+                                </a>
+                            {% else %}
+                                {{ value }}
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center">
+        No data available in the pathways table.
+    </div>
+    {% endif %}
+
+    <h2 class="text-center mt-5">Pathway Diagram</h2>
+    <div class="image-container" style="position: relative; overflow: hidden; width: 100%; height: 600px; border: 1px solid #ccc; cursor: grab;">
+        <a href="{{ url_for('static', filename='images/hsa05213.png') }}" target="_blank">
+            <img id="pathway-image" src="{{ url_for('static', filename='images/hsa05213.png') }}" alt="Pathway Diagram" style="transform: translate(0px, 0px) scale(1); transform-origin: 0 0; user-select: none;">
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='scripts/pathway_zoom.js') }}"></script>
+{% endblock %}

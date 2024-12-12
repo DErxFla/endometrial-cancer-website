@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+Pathway Search Results
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Pathway Search Results</h1>
+
+    <p class="text-center">Search Query: <strong>{{ query }}</strong></p>
+
+    {% if pathway_results %}
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-head-light-purple">
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Pathway Definition</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pathway in pathway_results %}
+                <tr>
+                    <td>
+                        <a href="https://www.kegg.jp/entry/{{ pathway.element }}" target="_blank" rel="noopener noreferrer">
+                            {{ pathway.element }}
+                        </a>
+                    </td>
+                    <td>{{ pathway.description }}</td>
+                    <td>{{ pathway.pathway_def }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center">
+        No pathways found matching your search query.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

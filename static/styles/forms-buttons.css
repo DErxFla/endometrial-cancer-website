@@ -1,0 +1,79 @@
+/* Buttons */
+.container .btn {
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.container .btn-outline-primary {
+    border-color: #FFC0CB;
+    color: #FFC0CB;
+}
+
+body.dark-mode .container .btn-outline-primary {
+    border-color: #fff;
+    color: #fff;
+}
+
+.container .btn-outline-primary:hover {
+    background-color: #FFC0CB;
+    color: #fff;
+}
+
+body.dark-mode .container .btn-outline-primary:hover {
+    background-color: #444444;
+    color: #fff;
+}
+
+/* Search Form Styles */
+.search-form .input-group {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.rose-select, .rose-input {
+    border: 1px solid #FFC0CB;
+    border-radius: 0;
+}
+
+body.dark-mode .rose-select, body.dark-mode .rose-input {
+    border: 1px solid #444444;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.rose-select:focus, .rose-input:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #ff99aa;
+}
+
+body.dark-mode .rose-select:focus, body.dark-mode .rose-input:focus {
+    border-color: #fff;
+}
+
+.rose-button {
+    background-color: #FFC0CB;
+    border-color: #FFC0CB;
+    color: #fff;
+}
+
+body.dark-mode .rose-button {
+    background-color: #444444;
+    border-color: #444444;
+    color: #fff;
+}
+
+.rose-button:hover {
+    background-color: #ff99aa;
+    border-color: #ff99aa;
+}
+
+body.dark-mode .rose-button:hover {
+    background-color: #666666;
+    border-color: #666666;
+}
+
+body.dark-mode .rose-input::placeholder {
+    color: #ffffff; /* Makes the placeholder text white */
+    opacity: 1; /* Ensures the placeholder text is fully visible */
+}

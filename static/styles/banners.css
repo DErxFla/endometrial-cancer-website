@@ -1,0 +1,41 @@
+/* Banner Container */
+.banner-container {
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark-mode .banner-container {
+    background-color: #1e1e1e;
+}
+
+/* Rose Banner with Title */
+.rose-banner {
+    background-color: #FFC0CB;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .rose-banner {
+    background-color: #444444;
+}
+
+.rose-banner h1 a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+body.dark-mode .rose-banner h1 a {
+    color: #fff;
+}
+
+.rose-banner h1 a:hover {
+    color: #ff99aa;
+}
